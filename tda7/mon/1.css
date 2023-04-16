@@ -1,0 +1,84 @@
+body{
+    background-color: #000000;
+    background-image: url(bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#men{
+    position: absolute;
+    left: 50%;
+    top: -60px;
+    margin-left: -400px;
+    width: 800px;
+    height: 600px;
+}
+#tutor{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #000000d2;
+    z-index: 10;
+    top: 0;
+    left: 0;
+}
+#tutor > img{
+    /* height: 100%; */
+    position: absolute;
+    top: 10%;
+}
+.window{
+    background-color: #f7ade0f5;
+    background-image: url(bgafonya.png);
+    border: solid #f789d4e1 4px;
+    border-radius: 8px;
+    text-align: center;
+    display: flex
+}
+#dwind{
+    position: absolute;
+    top: 62%;
+    width: 80%;
+    height: 15%;
+    margin-left: 10%;
+}
+.dansw{
+    position: absolute;
+    /* top: 82%; */
+    width: 39.5%;
+    height: 8%;
+    margin-left: 10%;
+}
+.dansw:hover{
+    background-color: #eb9bd1f5;
+}
+d{
+    color: white;
+    font-size: 25px;
+    margin: auto;
+    font-family: monospace;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+    pointer-events: none;
+}
+#scale_fail{
+    z-index: 11;
+    width: 30px;
+    height: 30%;
+    background-color: #ffafbc;
+    border-radius: 5px;
+}
+#sf_border{
+    z-index: 11;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    margin-top: -150px;
+    width: 30px;
+    height: 300px;
+    border: #ffffff 2px solid;
+    background-color: #0000004f;
+    padding: 2px;
+    display: flex;
+	flex-direction: column-reverse;
+    border-radius: 8px;
+}
