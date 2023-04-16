@@ -1,0 +1,38 @@
+textarea{
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    width: 60%;
+    height: 500px;
+    resize: none;
+    pointer-events: none;
+    font-size: 20px;
+}
+b{
+    color: red;
+}
+.i{
+    position: absolute;
+    left: 3px;
+    top: 20%;
+}
+#a{
+    color: orange;
+    font-size: 12px;
+}
+#how{
+    position: relative;
+    top: 5px;
+    color: #acacac;
+    font-weight: bold;
+    cursor: pointer;
+}
+#how:hover{
+    color: #7c7c7c;
+}
+#ruls{
+    position: relative;
+    top: 5px;
+    color: #7c7c7c;
+    font-weight: bold;
+}
