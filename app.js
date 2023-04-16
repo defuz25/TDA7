@@ -1,6 +1,7 @@
-const express = require("express");
+const express = require('express');
 const app = express();
 const port = process.env.PORT || 3001;
+const fs = require('fs')
 
 let html = fs.readFile('public/c.html', 'utf8');
 
