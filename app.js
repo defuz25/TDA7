@@ -10,8 +10,7 @@ console.log(html);
 //   res.send('ok3');
 // });
 app.get("/", function(req, res) {
-  // res.sendFile(path.join(__dirname, '/c.html'));
-  fs.createReadStream(html).pipe(res);
+  res.sendFile('public/c.html');
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
