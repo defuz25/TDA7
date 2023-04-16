@@ -9,7 +9,7 @@ let html = fs.readFileSync('public/c.html', 'utf8');
 //   res.send('ok3');
 // });
 app.get("/", function(req, res) {
-  res.sendFile(path.dirname + '/public/c.html');
+  res.sendFile(__dirname + '/public/c.html');
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
