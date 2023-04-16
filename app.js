@@ -4,6 +4,6 @@ const port = process.env.PORT || 3001;
 
 let html = fs.readFile('public/c.html', 'utf8');
 
-app.get("/", (req, res) => res.type('html').send(html));
+app.get("/", (req, res) => res.type('html').send('<p>w</p>'));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
