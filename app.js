@@ -4,7 +4,7 @@ const port = process.env.PORT || 3001;
 const fs = require('fs');
 const path = require('path');
 
-app.use(express.static(__dirname + '/tga7'))
+app.use(express.static(__dirname + '/tda7'))
 
 
 // app.get("/", function(req, res) {
