@@ -13,7 +13,7 @@ app.use(express.static(__dirname + '/tda7'))
 app.get("/igra228", function(req, res) {
   res.sendFile(__dirname + '/tda7/main/index.html');
 });
-app.get('/info', function(){
+app.get('/info', function(req, res){
   res.sendFile(__dirname + '/tda7/info.html');
 });
 
