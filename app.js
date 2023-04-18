@@ -10,8 +10,11 @@ app.use(express.static(__dirname + '/tda7'))
 // app.get("/", function(req, res) {
 //   res.send('ok3');
 // });
-app.get("/", function(req, res) {
-  res.sendFile(__dirname + '/tda7/index.html');
+app.get("/igra228", function(req, res) {
+  res.sendFile(__dirname + '/tda7/main/index.html');
+});
+app.get('/info', function(){
+  res.sendFile(__dirname + '/tda7/info.html');
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

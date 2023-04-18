@@ -32,7 +32,7 @@ body{
     border: solid #f789d4e1 4px;
     border-radius: 8px;
     text-align: center;
-    display: flex
+    display: flex;
 }
 #dwind{
     position: absolute;
