@@ -6,7 +6,7 @@ const path = require('path');
 
 app.use(express.static(__dirname + '/tda7'))
 
-
+let text = fs.readSync('1.txt')
 // app.get("/", function(req, res) {
 //   res.send('ok3');
 // });
@@ -15,6 +15,7 @@ app.get("/igra228", function(req, res) {
 });
 app.get('/info', function(req, res){
   res.sendFile(__dirname + '/tda7/info.html');
+  res.send(`<i>${text}</i>`);
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
