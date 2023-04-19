@@ -6,7 +6,7 @@ const path = require('path');
 
 app.use(express.static(__dirname + '/tda7'))
 
-let text = fs.readSync(`${__dirname}/tda7/1.txt`, 'utf8')
+let text = fs.readFileSync(`1.txt`, 'utf8')
 // app.get("/", function(req, res) {
 //   res.send('ok3');
 // });
