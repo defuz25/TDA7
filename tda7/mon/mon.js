@@ -19,21 +19,21 @@ let response = await fetch('https://tda7.onrender.com/1.txt');
 let txt = await response.text();
 console.log(txt);
 
-async function f(){
-    let response = await fetch('http://e965137u.beget.tech/dialogs.json',
-    {
-        mode: 'no-cors',
-        method: "post",
-        headers: {
-            "Content-Type": "application/json"
-        }
-    });
-    let text = await response.json();
-    if (response.ok) {
-        console.log(text);
-    }
-}
-f();
+// async function f(){
+//     let response = await fetch('http://e965137u.beget.tech/dialogs.json',
+//     {
+//         mode: 'no-cors',
+//         method: "post",
+//         headers: {
+//             "Content-Type": "application/json"
+//         }
+//     });
+//     let text = await response.json();
+//     if (response.ok) {
+//         console.log(text);
+//     }
+// }
+// f();
 
 
 $('#tutor').click(()=> {
