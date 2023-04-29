@@ -15,10 +15,11 @@ $('.dansw:eq(3)').css({'top': '88%', 'margin-left': '50.5%'});
 $('.dansw:gt(0)').hide();
 $('#tutor').slideDown(500);
 
-let response = await fetch('https://tda7.onrender.com/1.txt');
-let txt = await response.text();
+async function f(){
+    let response = await fetch('https://tda7.onrender.com/1.txt');
+    let txt = await response.text();
 console.log(txt);
-
+}
 // async function f(){
 //     let response = await fetch('http://e965137u.beget.tech/dialogs.json',
 //     {
@@ -33,7 +34,7 @@ console.log(txt);
 //         console.log(text);
 //     }
 // }
-// f();
+f();
 
 
 $('#tutor').click(()=> {
