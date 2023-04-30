@@ -18,7 +18,7 @@ $('#tutor').slideDown(500);
 async function f(){
     let response = await fetch('https://tda7.onrender.com/1.txt');
     let txt = await response.text();
-    let scenariy = txt.split('/');
+    let scenariy = txt.split('\n');
     console.log(scenariy);
 }
 // async function f(){
