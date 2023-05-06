@@ -2,6 +2,7 @@ const kingost = new Audio('sound/kingost.mp3');
 kingost.loop = true;
 kingost.volume = 0.1;
 const FR = new FileReader();
+let companionText;
  
 let var_answer;
 let step = 0;
@@ -18,7 +19,7 @@ $('#tutor').slideDown(500);
 async function f(){
     let response = await fetch('https://tda7.onrender.com/1.txt');
     let txt = await response.text();
-    let companionText = txt.split('\n');
+    companionText = txt.split('\n');
 }
 // async function f(){
 //     let response = await fetch('http://e965137u.beget.tech/dialogs.json',
