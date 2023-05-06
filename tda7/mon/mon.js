@@ -1,7 +1,6 @@
 const kingost = new Audio('sound/kingost.mp3');
 kingost.loop = true;
 kingost.volume = 0.1;
-const FR = new FileReader();
 let companionRepl;
 let yourVarRepl;
  
@@ -47,8 +46,10 @@ function answers_change(step) {
             let cor = yourVarRepl[step+i].slice(-1);
             if(cor==1 || cor==0){
                 $(`d:eq(${i+1})`).text(yourVarRepl[step+i].slice(0,-1));
+                $(`d:eq(${i+1})`).attr('correct', cor);
             }else{
                 $(`d:eq(${i+1})`).text(yourVarRepl[step+i]);
+                $(`d:eq(${i+1})`).attr('correct', 2);
             }
         }
     }, 100);
@@ -75,7 +76,10 @@ function print_txt(txt, who){
 
 $('.dansw').click(function() {
     var_answer = Number($(this).attr('var_answer'));
+    if($(`d:eq(${i+1})`).attr('correct')!=2){
+        luck_change($(this).attr('correct'));
+    }
     print_txt(companionRepl[step]);
     answers_change(step);
-    step++
+    step++;
 });
