@@ -17,7 +17,7 @@ $('.dansw:gt(0)').hide();
 $('#tutor').slideDown(500);
 
 async function f(){
-    let response = await fetch('https://tda7.onrender.com/1.txt');
+    let response = await fetch('https://tda7.onrender.com/mon.txt');
     let txt = await response.text();
     companionText = txt.split('\n');
 }
@@ -81,45 +81,5 @@ function print_txt(txt, who){
 
 $('.dansw').click(function() {
     var_answer = Number($(this).attr('var_answer'));
-    switch(step){
-        case 0:
-            switch(var_answer){
-                default:
-                    kingost.play();
-                    step++;
-                    answers_change('А ты','А ты','А ты','А ты');
-            }
-            break;
-        case 1:
-            switch(var_answer){
-                default:
-                    text='А ты чем увлекаешься?';
-            }
-            step++;
-            break;
-        case 2:
-            print_txt('я гей');
-            answers_change('Интересное занятие','Фу','Ого','Я тоже');
-            step++;
-            break
-        case 3:
-            switch(var_answer){
-                case 0:
-                    luck_change(1);
-                    sprite_change(2);
-                    text = 'спасибо';
-                    break;
-                case 1:
-                    print_txt('ох');
-                    break;
-                case 2:
-                    print_txt('ага');
-                    break;
-                case 3:
-                    sprite_change(2);
-                    luck_change(1);
-                    print_txt('ого');
-            }
-    }
     print_txt(companionText[step]);
 });
