@@ -78,6 +78,7 @@ $('.dansw').click(function() {
     var_answer = Number($(this).attr('var_answer'));
     if($(this).attr('correct')!=2){
         luck_change($(this).attr('correct'));
+        console.log(1);
     }
     print_txt(companionRepl[step]);
     answers_change(step);
