@@ -17,7 +17,7 @@ $('.dansw:gt(0)').hide();
 $('#tutor').slideDown(500);
 
 async function f(){
-    let response = await fetch('https://tda7.onrender.com/replK.txt');
+    let response = await fetch('https://tda7.onrender.com/mon/replK.txt');
     let txt = await response.text();
     companionText = txt.split('\n');
 }
