@@ -46,10 +46,10 @@ function answers_change(step) {
             let cor = String(yourVarRepl[step+i]).slice(-1);
             if(cor==1 || cor==0){
                 $(`d:eq(${i+1})`).text(yourVarRepl[step+i].slice(0,-1));
-                $(`.dansw:eq(${i+1})`).attr('correct', cor);
+                $(`.dansw:eq(${i})`).attr('correct', cor);
             }else{
                 $(`d:eq(${i+1})`).text(yourVarRepl[step+i]);
-                $(`.dansw:eq(${i+1})`).attr('correct', 2);
+                $(`.dansw:eq(${i})`).attr('correct', 2);
             }
         }
     }, 100);
