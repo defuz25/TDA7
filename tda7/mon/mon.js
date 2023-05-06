@@ -44,10 +44,10 @@ function answers_change(step) {
     setTimeout(() => {
         for(let i=0;i<=3;i++){
             let cor = String(yourVarRepl[step+i]).slice(-1);
-            console.log(cor);
             if(cor==1 || cor==0){
                 $(`d:eq(${i+1})`).text(yourVarRepl[step+i].slice(0,-1));
                 $(`d:eq(${i+1})`).attr('correct', cor);
+                console.log(cor);
             }else{
                 $(`d:eq(${i+1})`).text(yourVarRepl[step+i]);
                 $(`d:eq(${i+1})`).attr('correct', 2);
