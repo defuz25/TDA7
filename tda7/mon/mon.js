@@ -2,7 +2,8 @@ const kingost = new Audio('sound/kingost.mp3');
 kingost.loop = true;
 kingost.volume = 0.1;
 const FR = new FileReader();
-let companionText;
+let companionRepl;
+let yourVarRepl;
  
 let var_answer;
 let step = 0;
@@ -19,22 +20,11 @@ $('#tutor').slideDown(500);
 async function f(){
     let response = await fetch('https://tda7.onrender.com/mon/replK.txt');
     let txt = await response.text();
-    companionText = txt.split('\n');
+    companionRepl = txt.split('\n');
+    response = await fetch('https://tda7.onrender.com/mon/YVarRepl.txt');
+    txt = await response.text();
+    yourVarRepl = txt.split('\n');
 }
-// async function f(){
-//     let response = await fetch('http://e965137u.beget.tech/dialogs.json',
-//     {
-//         mode: 'no-cors',
-//         method: "post",
-//         headers: {
-//             "Content-Type": "application/json"
-//         }
-//     });
-//     let text = await response.json();
-//     if (response.ok) {
-//         console.log(text);
-//     }
-// }
 f();
 
 
@@ -48,15 +38,19 @@ function sprite_change(ns){
     $('#men').fadeIn(250, 'linear');
 }
 function luck_change(correct){
-    luck+=correct?15:Math.ceil(-luck*0.7)
+    luck+=correct?15:Math.ceil(-luck*0.7);
     $('#scale_fail').animate({height: `${luck}%`}, 300);
 }
-function answers_change(a0,a1,a2,a3) {
+function answers_change(step) {
     setTimeout(() => {
-        $('d:eq(1)').text(a0);
-        $('d:eq(2)').text(a1);
-        $('d:eq(3)').text(a2);
-        $('d:eq(4)').text(a3);
+        for(let i=0;i<=3;i++){
+            let cor = yourVarRepl[step+i].slice(-1);
+            if(cor==1 || cor==0){
+                $(`d:eq(${i})`).text(yourVarRepl[step+i].slice(0,-1));
+            }else{
+                $(`d:eq(${i})`).text(yourVarRepl[step+i]);
+            }
+        }
     }, 100);
 }
 function print_txt(txt, who){
@@ -81,5 +75,7 @@ function print_txt(txt, who){
 
 $('.dansw').click(function() {
     var_answer = Number($(this).attr('var_answer'));
-    print_txt(companionText[step]);
+    print_txt(companionRepl[step]);
+    answers_change(step);
+    step++
 });
