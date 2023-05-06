@@ -76,7 +76,7 @@ function print_txt(txt, who){
 
 $('.dansw').click(function() {
     var_answer = Number($(this).attr('var_answer'));
-    if($(`d:eq(${i+1})`).attr('correct')!=2){
+    if($(this).attr('correct')!=2){
         luck_change($(this).attr('correct'));
     }
     print_txt(companionRepl[step]);
