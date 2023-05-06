@@ -46,9 +46,9 @@ function answers_change(step) {
         for(let i=0;i<=3;i++){
             let cor = yourVarRepl[step+i].slice(-1);
             if(cor==1 || cor==0){
-                $(`d:eq(${i})`).text(yourVarRepl[step+i].slice(0,-1));
+                $(`d:eq(${i++})`).text(yourVarRepl[step+i].slice(0,-1));
             }else{
-                $(`d:eq(${i})`).text(yourVarRepl[step+i]);
+                $(`d:eq(${i++})`).text(yourVarRepl[step+i]);
             }
         }
     }, 100);
