@@ -18,8 +18,7 @@ $('#tutor').slideDown(500);
 async function f(){
     let response = await fetch('https://tda7.onrender.com/1.txt');
     let txt = await response.text();
-    let scenariy = txt.split('\n');
-    console.log(scenariy);
+    let companionText = txt.split('\n');
 }
 // async function f(){
 //     let response = await fetch('http://e965137u.beget.tech/dialogs.json',
@@ -87,7 +86,6 @@ $('.dansw').click(function() {
                 default:
                     kingost.play();
                     step++;
-                    text='чем увлекаешься';
                     answers_change('А ты','А ты','А ты','А ты');
             }
             break;
@@ -122,5 +120,5 @@ $('.dansw').click(function() {
                     print_txt('ого');
             }
     }
-    print_txt(text);
+    print_txt(companionText[step]);
 });
