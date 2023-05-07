@@ -49,33 +49,25 @@ function answers_change(step) {
             let cor = yourVarRepl[step+i].slice(-1);
             $(`.dansw:eq(${i})`).attr('var_answer', yourVarRepl[step+i].slice(0,1));
             if(cor==1 || cor==0){
-                $(`d:eq(${i})`).text(replThatFits[i].slice(1,-1));
+                $(`d:eq(${i+1})`).text(replThatFits[i].slice(1,-1));
                 $(`.dansw:eq(${i})`).attr('correct', cor);
             }else{
-                $(`d:eq(${i})`).text(replThatFits[i].slice(1,-1));
+                $(`d:eq(${i+1})`).text(replThatFits[i].slice(1,-1));
                 $(`.dansw:eq(${i})`).attr('correct', 2);
             }
             $(`.dansw:eq(${i})`).fadeIn(300)
         }
     }, 100);
 }
-function print_txt(txt, who){
-    // if (who) $('d:first').css('font-family', 'Times New Roman');
-    // else $('d:first').css('font-family', 'monospace');
-    // is = false;
+function print_txt(txt){
     $('.dansw').fadeOut(100);
-    let p=0;
     $('d:first').text('');
     let print=setInterval(() => {
         $('d:first').text($('d:first').text() + txt[p]);
-        let txtsound=new Audio('sound/txt_sound.mp3'); 
+        let txtsound = new Audio('sound/txt_sound.mp3'); 
         txtsound.play();
-        // p++
-        // if(p==txt.length){
-        //     is = true;
-        //     clearInterval(print); 
-        //     if (!who) setTimeout(() => $('.dansw').fadeIn(300), 200);
-        // }
+        p++
+        if(p==txt.length) clearInterval(print); 
     }, 40);
 }
 
