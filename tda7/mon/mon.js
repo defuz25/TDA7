@@ -5,7 +5,7 @@ let companionRepl;
 let yourVarRepl;
  
 let var_answer;
-let step = 0;
+let step = -1;
 let luck = 30;
 let is = false;
 $('#tutor').hide();
@@ -29,7 +29,6 @@ f();
 
 $('#tutor').click(()=> {
     $('#tutor').slideUp(500);
-    
 })
 
 function sprite_change(ns){
