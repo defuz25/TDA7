@@ -43,7 +43,7 @@ function luck_change(correct){
 function answers_change(step) {
     setTimeout(() => {
         for(let i=0;i<=3;i++){
-            let cor = yourVarRepl[step+i].slice(-1);
+            let cor = String(yourVarRepl[step+i]).slice(-1);
             if(cor==1 || cor==0){
                 $(`d:eq(${i+1})`).text(yourVarRepl[step+i].slice(0,-1));
                 $(`.dansw:eq(${i})`).attr('correct', cor);
