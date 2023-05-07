@@ -53,7 +53,6 @@ function answers_change(step) {
                     $(`d:eq(${i+1})`).text(yourVarRepl[step+i]);
                     $(`.dansw:eq(${i})`).attr('correct', 2);
                 }
-                $(`.dansw:eq(${i})`).show();
             }else{
                 $(`.dansw:eq(${i})`).hide();
             }
@@ -82,7 +81,7 @@ function print_txt(txt, who){
 
 $('.dansw').click(function() {
     var_answer = Number($(this).attr('var_answer'));
-    step+=var_answer;
+    step=var_answer;
     console.log(step);
     if($(this).attr('correct')!=2){
         luck_change($(this).attr('correct'));
