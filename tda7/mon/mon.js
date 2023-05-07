@@ -82,5 +82,5 @@ $('.dansw').click(function() {
     }
     print_txt(companionRepl[step]);
     answers_change(step);
-    step=+var_answer;
+    step=+var_answer+1;
 });
