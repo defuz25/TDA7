@@ -5,7 +5,7 @@ let companionRepl;
 let yourVarRepl;
  
 let var_answer;
-let step = -1;
+let step = 0;
 let luck = 30;
 let is = false;
 $('#tutor').hide();
