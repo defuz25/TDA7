@@ -49,10 +49,10 @@ function answers_change(step) {
             let cor = yourVarRepl[step+i].slice(-1);
             $(`.dansw:eq(${i})`).attr('var_answer', yourVarRepl[step+i].slice(0,1));
             if(cor==1 || cor==0){
-                $(`d:eq(${i+1})`).text(replThatFits[i].slice(1,-1));
+                $(`d:eq(${i})`).text(replThatFits[i].slice(1,-1));
                 $(`.dansw:eq(${i})`).attr('correct', cor);
             }else{
-                $(`d:eq(${i+1})`).text(replThatFits[i].slice(1,-1));
+                $(`d:eq(${i})`).text(replThatFits[i].slice(1,-1));
                 $(`.dansw:eq(${i})`).attr('correct', 2);
             }
             $(`.dansw:eq(${i})`).fadeIn(300)
