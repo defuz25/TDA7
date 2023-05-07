@@ -5,7 +5,7 @@ let companionRepl;
 let yourVarRepl;
  
 let var_answer;
-let step = 0;
+let step = -1;
 let luck = 30;
 let is = false;
 $('#tutor').hide();
@@ -75,6 +75,7 @@ function print_txt(txt, who){
 }
 
 $('.dansw').click(function() {
+    step+=var_answer;
     console.log(step);
     var_answer = Number($(this).attr('var_answer'));
     if($(this).attr('correct')!=2){
@@ -83,5 +84,4 @@ $('.dansw').click(function() {
     }
     print_txt(companionRepl[step]);
     answers_change(step);
-    step+=var_answer;
 });
