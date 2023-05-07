@@ -48,18 +48,14 @@ function answers_change(step) {
         for(let i=0;i<=replThatFits.length;i++){
             let cor = yourVarRepl[step+i].slice(-1);
             $(`.dansw:eq(${i})`).attr('var_answer', yourVarRepl[step+i].slice(0,1));
-            if(st==step){
-                if(cor==1 || cor==0){
-                    $(`d:eq(${i+1})`).text(replThatFits[i].slice(1,-1));
-                    $(`.dansw:eq(${i})`).attr('correct', cor);
-                }else{
-                    $(`d:eq(${i+1})`).text(replThatFits[i].slice(1,-1));
-                    $(`.dansw:eq(${i})`).attr('correct', 2);
-                }
-                $(`.dansw:eq(${i})`).fadeIn(300)
+            if(cor==1 || cor==0){
+                $(`d:eq(${i+1})`).text(replThatFits[i].slice(1,-1));
+                $(`.dansw:eq(${i})`).attr('correct', cor);
             }else{
-                $(`.dansw:eq(${i})`).hide();
+                $(`d:eq(${i+1})`).text(replThatFits[i].slice(1,-1));
+                $(`.dansw:eq(${i})`).attr('correct', 2);
             }
+            $(`.dansw:eq(${i})`).fadeIn(300)
         }
     }, 100);
 }
