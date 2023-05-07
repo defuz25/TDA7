@@ -62,7 +62,8 @@ function answers_change(step) {
 function print_txt(txt){
     $('.dansw').fadeOut(100);
     $('d:first').text('');
-    let print=setInterval(() => {
+    let p=0;
+    let print = setInterval(() => {
         $('d:first').text($('d:first').text() + txt[p]);
         let txtsound = new Audio('sound/txt_sound.mp3'); 
         txtsound.play();
