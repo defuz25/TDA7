@@ -75,9 +75,9 @@ function print_txt(txt, who){
 }
 
 $('.dansw').click(function() {
+    var_answer = Number($(this).attr('var_answer'));
     step+=var_answer;
     console.log(step);
-    var_answer = Number($(this).attr('var_answer'));
     if($(this).attr('correct')!=2){
         luck_change($(this).attr('correct'));
         console.log(1);
