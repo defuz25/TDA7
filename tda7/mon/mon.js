@@ -40,19 +40,23 @@ function luck_change(correct){
     $('#scale_fail').animate({height: `${luck}%`}, 300);
 }
 function answers_change(step) {
+    let replThatFits = new Array();
     setTimeout(() => {
-        for(let i=0;i<=3;i++){
+        for (let repl of yourVarRepl){
+            if(repl.slice(0,1)==step) replThatFits.push(repl.slice(1));
+        }
+        for(let i=0;i<=replThatFits.length;i++){
             let cor = yourVarRepl[step+i].slice(-1);
-            let st = yourVarRepl[step+i].slice(0,1);
-            $(`.dansw:eq(${i})`).attr('var_answer', yourVarRepl[step+i].slice(1,2));
+            $(`.dansw:eq(${i})`).attr('var_answer', yourVarRepl[step+i].slice(0,1));
             if(st==step){
                 if(cor==1 || cor==0){
-                    $(`d:eq(${i+1})`).text(yourVarRepl[step+i].slice(0,-1));
+                    $(`d:eq(${i+1})`).text(replThatFits[i].slice(1,-1));
                     $(`.dansw:eq(${i})`).attr('correct', cor);
                 }else{
-                    $(`d:eq(${i+1})`).text(yourVarRepl[step+i]);
+                    $(`d:eq(${i+1})`).text(replThatFits[i].slice(1,-1));
                     $(`.dansw:eq(${i})`).attr('correct', 2);
                 }
+                $(`.dansw:eq(${i})`).fadeIn(300)
             }else{
                 $(`.dansw:eq(${i})`).hide();
             }
@@ -60,9 +64,9 @@ function answers_change(step) {
     }, 100);
 }
 function print_txt(txt, who){
-    if (who) $('d:first').css('font-family', 'Times New Roman');
-    else $('d:first').css('font-family', 'monospace');
-    is = false;
+    // if (who) $('d:first').css('font-family', 'Times New Roman');
+    // else $('d:first').css('font-family', 'monospace');
+    // is = false;
     $('.dansw').fadeOut(100);
     let p=0;
     $('d:first').text('');
@@ -70,12 +74,12 @@ function print_txt(txt, who){
         $('d:first').text($('d:first').text() + txt[p]);
         let txtsound=new Audio('sound/txt_sound.mp3'); 
         txtsound.play();
-        p++
-        if(p==txt.length){
-            is = true;
-            clearInterval(print); 
-            if (!who) setTimeout(() => $('.dansw').fadeIn(300), 200);
-        }
+        // p++
+        // if(p==txt.length){
+        //     is = true;
+        //     clearInterval(print); 
+        //     if (!who) setTimeout(() => $('.dansw').fadeIn(300), 200);
+        // }
     }, 40);
 }
 
