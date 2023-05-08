@@ -1,7 +1,7 @@
 const kingost = new Audio('sound/kingost.mp3');
 kingost.loop = true;
 kingost.volume = 0.1;
-let Repl;
+let repls;
 let yourVarRepl;
  
 let var_answer;
@@ -19,7 +19,7 @@ $('#tutor').slideDown(500);
 async function f(){
     let response = await fetch('https://tda7.onrender.com/mon/repl.txt');
     let txt = await response.text();
-    companionRepl = txt.split('\n');
+    repls = txt.split('\n');
     response = await fetch('https://tda7.onrender.com/mon/YVarRepl.txt');
     txt = await response.text();
     yourVarRepl = txt.split('\n');
@@ -62,7 +62,7 @@ function answers_change(step) {
         }
     }, 100);
 }
-function print_txt(txt, step){
+function print_txt(txt){
 
     $('.dansw').fadeOut(100);
     $('d:first').text('');
@@ -84,6 +84,6 @@ $('.dansw').click(function() {
         luck_change($(this).attr('correct'));
         console.log(1);
     }
-    print_txt(Repl[step]);
+    print_txt(repls[step]);
     answers_change(step);
 });
