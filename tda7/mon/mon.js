@@ -41,22 +41,35 @@ function luck_change(correct){
 }
 function answers_change(step) {
     let replThatFits = new Array();
+    let i = 0;
     setTimeout(() => {
         for (let repl of yourVarRepl){
-            if(repl.slice(0,1)==step) replThatFits.push(repl.slice(1));
-        }
-        for(let i=0;i<=replThatFits.length;i++){
-            let cor = yourVarRepl[step+i].slice(-1);
-            $(`.dansw:eq(${i})`).attr('var_answer', yourVarRepl[step+i].slice(0,1));
-            if(cor==1 || cor==0){
-                $(`d:eq(${i+1})`).text(replThatFits[i].slice(1,-1));
-                $(`.dansw:eq(${i})`).attr('correct', cor);
-            }else{
-                $(`d:eq(${i+1})`).text(replThatFits[i].slice(1,-1));
-                $(`.dansw:eq(${i})`).attr('correct', 2);
+            if(repl.slice(0,1)==step) {
+                replThatFits = repl.split('/');
+                console.log(replThatFits);
+                $(`.dansw:eq(${i})`).attr('var_answer', replThatFits[1]);
+                if (replThatFits[3]==0||replThatFits[3]==1){
+                    $(`.dansw:eq(${i})`).attr('correct', replThatFits[3]);
+                } else {
+                    $(`.dansw:eq(${i})`).attr('correct', 2);
+                }
+                $(`d:eq(${i+1})`).text(replThatFits[2]);
+                $(`.dansw:eq(${i})`).fadeIn(300);
+                i++;
             }
-            $(`.dansw:eq(${i})`).fadeIn(300)
         }
+        // for(let i=0;i<=replThatFits.length;i++){
+        //     let cor = yourVarRepl[step+i].slice(-1);
+        //     $(`.dansw:eq(${i})`).attr('var_answer', yourVarRepl[step+i].slice(0,1));
+        //     if(cor==1 || cor==0){
+        //         $(`d:eq(${i+1})`).text(replThatFits[i].slice(1,-1));
+        //         $(`.dansw:eq(${i})`).attr('correct', cor);
+        //     }else{
+        //         $(`d:eq(${i+1})`).text(replThatFits[i].slice(1,-1));
+        //         $(`.dansw:eq(${i})`).attr('correct', 2);
+        //     }
+        //     $(`.dansw:eq(${i})`).fadeIn(300)
+        // }
     }, 100);
 }
 function print_txt(txt){
@@ -74,7 +87,7 @@ function print_txt(txt){
 
 $('.dansw').click(function() {
     var_answer = Number($(this).attr('var_answer'));
-    step=var_answer;
+    step = var_answer;
     console.log(step);
     if($(this).attr('correct')!=2){
         luck_change($(this).attr('correct'));
