@@ -83,7 +83,7 @@ $('.dansw').click(function() {
     correct = $(this).attr('correct');
     console.log(correct);
     console.log(step);
-    if($(this).attr('correct')!=2){
+    if(correct!=2){
         luck_change(correct);
     }
     print_txt(repls[step]);
