@@ -1,7 +1,7 @@
 const kingost = new Audio('sound/kingost.mp3');
 kingost.loop = true;
 kingost.volume = 0.1;
-let companionRepl;
+let Repl;
 let yourVarRepl;
  
 let var_answer;
