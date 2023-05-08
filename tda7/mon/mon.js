@@ -39,8 +39,8 @@ function luck_change(correct){
     let color=correct?'#ffafbc71':'#0000008a';
     luck+=correct?15:Math.ceil(-luck*0.7);
     $('#scale_fail').animate({height: `${luck}%`}, 300);
-    $('#idkwtf').animate({background: `radial-gradient( #00000010 65%, ${color})`},300)
-    $('#idkwtf').animate({background: 'radial-gradient( #00000010 65%, #00000000)'},300)
+    $('#idkwtf').animate({background: `radial-gradient( #00000010 65%, ${color})`},300);
+    // $('#idkwtf').animate({background: 'radial-gradient( #00000010 65%, #00000000)'},300)
 }
 function answers_change(step) {
     let replThatFits = new Array();
