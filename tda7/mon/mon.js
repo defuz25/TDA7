@@ -3,7 +3,7 @@ kingost.loop = true;
 kingost.volume = 0.1;
 let repls;
 let yourVarRepl;
- 
+let correct;
 let var_answer;
 let step = -1;
 let luck = 30;
@@ -74,16 +74,16 @@ function print_txt(txt){
         txtsound.play();
         p++
         if(p==txt.length) clearInterval(print); 
-    }, 40);
+    }, 30);
 }
 
 $('.dansw').click(function() {
     var_answer = Number($(this).attr('var_answer'));
     step = var_answer;
+    correct = $(this).attr('correct');
     console.log(step);
     if($(this).attr('correct')!=2){
-        luck_change($(this).attr('correct'));
-        console.log(1);
+        luck_change(correct);
     }
     print_txt(repls[step]);
     answers_change(step);
