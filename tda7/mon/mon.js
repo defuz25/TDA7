@@ -17,7 +17,7 @@ $('.dansw:gt(0)').hide();
 $('#tutor').slideDown(500);
 
 async function f(){
-    let response = await fetch('https://tda7.onrender.com/mon/replK.txt');
+    let response = await fetch('https://tda7.onrender.com/mon/repl.txt');
     let txt = await response.text();
     companionRepl = txt.split('\n');
     response = await fetch('https://tda7.onrender.com/mon/YVarRepl.txt');
@@ -36,8 +36,11 @@ function sprite_change(ns){
     $('#men').fadeIn(250, 'linear');
 }
 function luck_change(correct){
+    let color=correct?'#ffafbc71':'#0000008a';
     luck+=correct?15:Math.ceil(-luck*0.7);
     $('#scale_fail').animate({height: `${luck}%`}, 300);
+    $('#idkwtf').animate({background: `radial-gradient( #00000010 65%, ${color})`},300)
+    $('#idkwtf').animate({background: 'radial-gradient( #00000010 65%, #00000000)'},300)
 }
 function answers_change(step) {
     let replThatFits = new Array();
@@ -46,7 +49,6 @@ function answers_change(step) {
         for (let repl of yourVarRepl){
             if(repl.slice(0,1)==step) {
                 replThatFits = repl.split('/');
-                console.log(replThatFits);
                 $(`.dansw:eq(${i})`).attr('var_answer', replThatFits[1]);
                 if (replThatFits[3]==0||replThatFits[3]==1){
                     $(`.dansw:eq(${i})`).attr('correct', replThatFits[3]);
@@ -58,21 +60,10 @@ function answers_change(step) {
                 i++;
             }
         }
-        // for(let i=0;i<=replThatFits.length;i++){
-        //     let cor = yourVarRepl[step+i].slice(-1);
-        //     $(`.dansw:eq(${i})`).attr('var_answer', yourVarRepl[step+i].slice(0,1));
-        //     if(cor==1 || cor==0){
-        //         $(`d:eq(${i+1})`).text(replThatFits[i].slice(1,-1));
-        //         $(`.dansw:eq(${i})`).attr('correct', cor);
-        //     }else{
-        //         $(`d:eq(${i+1})`).text(replThatFits[i].slice(1,-1));
-        //         $(`.dansw:eq(${i})`).attr('correct', 2);
-        //     }
-        //     $(`.dansw:eq(${i})`).fadeIn(300)
-        // }
     }, 100);
 }
-function print_txt(txt){
+function print_txt(txt, step){
+
     $('.dansw').fadeOut(100);
     $('d:first').text('');
     let p=0;
@@ -93,6 +84,6 @@ $('.dansw').click(function() {
         luck_change($(this).attr('correct'));
         console.log(1);
     }
-    print_txt(companionRepl[step]);
+    print_txt(Repl[step]);
     answers_change(step);
 });

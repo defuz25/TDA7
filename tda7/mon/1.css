@@ -4,6 +4,16 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
+#idkwtf{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    height: 100%;
+    width: 100%;
+    background: radial-gradient( #00000010 65%, #00000000);
+    pointer-events: none;
+}
 #men{
     position: absolute;
     left: 50%;
