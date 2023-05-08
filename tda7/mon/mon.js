@@ -81,6 +81,7 @@ $('.dansw').click(function() {
     var_answer = Number($(this).attr('var_answer'));
     step = var_answer;
     correct = $(this).attr('correct');
+    console.log(correct);
     console.log(step);
     if($(this).attr('correct')!=2){
         luck_change(correct);
