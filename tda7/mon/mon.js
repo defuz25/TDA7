@@ -40,7 +40,7 @@ function luck_change(correct){
     luck+=correct?15:Math.ceil(-luck*0.7);
     $('#scale_fail').animate({height: `${luck}%`}, 300);
     $('#idkwtf').animate({opacity: '1'}, 300);
-    $('#idkwtf').animate({opacity: '0'}, 500);
+    $('#idkwtf').animate({opacity: '0'}, 700);
     // $('#idkwtf').animate({background: 'radial-gradient( #00000010 65%, #00000000)'},300)
 }
 function answers_change(step) {

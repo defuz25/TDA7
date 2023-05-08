@@ -8,7 +8,6 @@ body{
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 20;
     height: 100%;
     width: 100%;
     background: radial-gradient( #00000000, 65%, #ffafbc71);
@@ -22,6 +21,7 @@ body{
     margin-left: -400px;
     width: 800px;
     height: 600px;
+    z-index: -1;
 }
 #tutor{
     position: absolute;
