@@ -11,7 +11,7 @@ body{
     z-index: 20;
     height: 100%;
     width: 100%;
-    background: radial-gradient( #00000010 65%, #00000000);
+    background: radial-gradient( #00000000 65%, #ffafbc71);
     pointer-events: none;
 }
 #men{
