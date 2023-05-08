@@ -48,8 +48,8 @@ function answers_change(step) {
     let i = 0;
     setTimeout(() => {
         for (let repl of yourVarRepl){
-            if(repl.slice(0,1)==step) {
-                replThatFits = repl.split('/');
+            replThatFits = repl.split('/');
+            if(replThatFits[0]==step) {
                 $(`.dansw:eq(${i})`).attr('var_answer', replThatFits[1]);
                 if (replThatFits[3]==0||replThatFits[3]==1){
                     $(`.dansw:eq(${i})`).attr('correct', replThatFits[3]);
