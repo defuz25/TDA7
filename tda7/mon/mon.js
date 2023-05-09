@@ -16,6 +16,12 @@ $('.dansw:eq(3)').css({'top': '88%', 'margin-left': '50.5%'});
 $('.dansw:gt(0)').hide();
 $('#tutor').slideDown(500);
 
+window.onload = function () {
+    setTimeout(function () {
+      $('#loader').fadeOut(1000);
+    }, 500);
+  }
+
 async function f(){
     let response = await fetch('https://tda7.onrender.com/mon/repl.txt');
     let txt = await response.text();
