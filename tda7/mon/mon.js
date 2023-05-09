@@ -94,6 +94,7 @@ function print_txt(step){
 $('.dansw').click(function() {
     var_answer = Number($(this).attr('var_answer'));
     step = var_answer;
+    if(!step) kingost.play();
     correct = $(this).attr('correct');
     console.log(correct);
     console.log(step);
