@@ -12,7 +12,7 @@ body{
     height: 100%;
     width: 100%;
     z-index: 1000;
-    background: linear-gradient(#ff63d0, #ffcef7);
+    background: linear-gradient(#ffa2e3, #ffcef7);
     color: white;
     font-family: monospace;
     /* background-color: #ffafbc; */
