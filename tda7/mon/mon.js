@@ -7,7 +7,7 @@ let correct;
 let var_answer;
 let step = -1;
 let luck = 30;
-let is = false;
+let is1 = false;
 $('#tutor').hide();
 $('.dansw:eq(0)').css('top', '78.5%');
 $('.dansw:eq(1)').css('top', '88%');
@@ -47,6 +47,7 @@ function answers_change(step) {
     let replThatFits = new Array();
     let i = 0;
     setTimeout(() => {
+    if(!is1){
         for (let repl of yourVarRepl){
             replThatFits = repl.split('/');
             if(replThatFits[0]==step) {
@@ -61,10 +62,20 @@ function answers_change(step) {
                 i++;
             }
         }
+    } else $('.dansw:eq(2)').fadeIn(300);
     }, 100);
 }
-function print_txt(txt){
-
+function print_txt(step){
+    let txt = repls[step];
+    if(txt.slice(0,1)==1){
+        let arrayRepl = txt.split('/');
+        txt = arrayRepl[1];
+        is1 = true;
+        $(`.dansw:eq(2)`).attr('var_answer', arrayRepl[2]);
+        $(`d:eq(3)`).text('>');
+        if(arrayRepl[3]!=0) $('d:first').css('font-style', 'italic');
+        else $('d:first').css('font-family', 'monospace');
+    } else is1 = false;
     $('.dansw').fadeOut(100);
     $('d:first').text('');
     let p=0;
@@ -86,6 +97,6 @@ $('.dansw').click(function() {
     if(correct!=2){
         luck_change(correct);
     }
-    print_txt(repls[step]);
+    print_txt(step);
     answers_change(step);
 });
