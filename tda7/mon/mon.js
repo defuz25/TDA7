@@ -87,7 +87,10 @@ function print_txt(step){
         let txtsound = new Audio('sound/txt_sound.mp3'); 
         txtsound.play();
         p++
-        if(p==txt.length) clearInterval(print); 
+        if(p==txt.length) {
+            clearInterval(print);
+            answers_change(step);
+        }
     }, 30);
 }
 
@@ -102,5 +105,4 @@ $('.dansw').click(function() {
         luck_change(correct);
     }
     print_txt(step);
-    answers_change(step);
 });
