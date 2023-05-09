@@ -13,6 +13,7 @@ body{
     width: 100%;
     z-index: 1000;
     background: linear-gradient(#ff63d0, #ffcef7);
+    color: white;
     /* background-color: #ffafbc; */
 }
 #idkwtf{
