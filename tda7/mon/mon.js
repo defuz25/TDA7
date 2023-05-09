@@ -73,8 +73,8 @@ function print_txt(step){
         is1 = true;
         $(`.dansw:eq(2)`).attr('var_answer', arrayRepl[2]);
         $(`d:eq(3)`).text('>');
-        if(arrayRepl[3]!=0) $('d:first').css('font-style', 'italic');
-        else $('d:first').css('font-family', 'monospace');
+        if(arrayRepl[3]!=0) $('d:first').css('font-style','italic');
+        else $('d:first').css('font-style','normal');
     } else is1 = false;
     $('.dansw').fadeOut(100);
     $('d:first').text('');
