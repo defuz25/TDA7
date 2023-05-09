@@ -15,7 +15,8 @@ body{
     background: linear-gradient(#ffa2e3, #ffcef7);
     color: white;
     font-family: monospace;
-    font-size: 30px;
+    font-size: 20px;
+    text-align: center;
     /* background-color: #ffafbc; */
 }
 #idkwtf{
