@@ -62,7 +62,10 @@ function answers_change(step) {
                 i++;
             }
         }
-    } else $('.dansw:eq(2)').fadeIn(300);
+    } else {
+        $('.dansw:eq(2)').fadeIn(300);
+        $(`.dansw:eq(2)`).attr('correct', 2);
+    }
     }, 100);
 }
 function print_txt(step){
