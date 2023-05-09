@@ -14,6 +14,7 @@ body{
     z-index: 1000;
     background: linear-gradient(#ff63d0, #ffcef7);
     color: white;
+    font-family: monospace;
     /* background-color: #ffafbc; */
 }
 #idkwtf{
