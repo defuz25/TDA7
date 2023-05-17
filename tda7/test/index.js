@@ -105,7 +105,7 @@ function cutscenes(){
 }
 
 $('.dansw').click(function() {
-    var_answer = Number($(this).attr('var_answer'));
+    var_answer = $(this).attr('var_answer');
     if(var_answer=='c') cutscenes();
     else {
         step = var_answer;
