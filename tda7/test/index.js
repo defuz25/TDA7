@@ -120,7 +120,7 @@ function cutscenes(){
         if(typeof txt!='number'){
             print(cats[++i],()=>{
                 $('#cont').css({visibility: 'visible'});
-                console.log('bebra');
+                console.log('bebraa');
             });
         } else {
             print_txt(txt);
