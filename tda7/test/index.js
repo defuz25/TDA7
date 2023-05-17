@@ -119,7 +119,8 @@ function cutscenes(){
         $('#cont').css('visibility', 'hidden');
         if(typeof txt!='number'){
             print(cats[++i],()=>{
-                $('#cont').css('visibility', 'visible');
+                $('#cont').css({visibility: 'visible'});
+                console.log('bebra');
             });
         } else {
             print_txt(txt);
