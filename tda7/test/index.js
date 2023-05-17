@@ -42,8 +42,8 @@ $('#tutor').click(()=> {
 })
 
 function sprite_change(name,ns){
-    $('#men').fadeOut(250, 'linear', ()=>$(`#${name}`).attr('src', `sprites/${name}${ns}.png`));
-    $('#men').fadeIn(250, 'linear');
+    $(`#${name}`).fadeOut(250, 'linear', ()=>$(`#${name}`).attr('src', `sprites/${name+ns}.png`));
+    $(`#${name}`).fadeIn(250);
 }
 function luck_change(correct){
     luck+=correct?15:Math.ceil(-luck*0.7);
@@ -119,13 +119,13 @@ function cutscenes(){
     sprite_change('cats', i);
     $('#cont').click(()=>{
         $('#cont').css('visibility', 'hidden');
-        if(cats[i].slice(0,1)!=0){
+        if(cats[i+1]!=0){
             print(cats[++i],()=>{
                 $('#cont').css({visibility: 'visible'});
             });
             sprite_change('cats', i);
         } else {
-            $('#dwind').animate({top: '150%'},1000,'swing',()=>$('#dwind').css({visibility: 'visible'}));
+            $('#dwind').animate({top: '620%'},1000,'swing',()=>$('#dwind').css({visibility: 'visible'}));
             $('#sf_border').animate({left: '10px'},1000);
             $('.dansw').fadeIn(100);
             $('#idkwtf').animate({opacity: '0'}, 700);
