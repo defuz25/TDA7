@@ -99,6 +99,7 @@ function print_txt(step){
 }
 function cutscenes(){
     $('.dansw').fadeOut(100);
+    $('#dwind').animate({top: '150%'},1000);
     $('#dwind').css({visibility: 'hidden'});
     $('#dwind').animate({top: '80%'},1000);
     // $('#dwind').fadeOut(500);

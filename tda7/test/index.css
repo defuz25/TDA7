@@ -85,7 +85,7 @@ d{
     font-weight: bold;
     letter-spacing: 0.3px;
     pointer-events: none;
-    visibility: 'visible'
+    visibility: visible;
 }
 #scale_fail{
     z-index: 11;
