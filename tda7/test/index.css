@@ -115,8 +115,8 @@ d{
     position: absolute;
     bottom: 5px;
     right: 10px;
-    /* margin: 10px; */
     font-weight: bold;
     font-size: 20px;
     font-family: monospace;
+    {visibility: hidden;
 }
