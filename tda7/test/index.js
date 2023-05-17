@@ -119,7 +119,7 @@ function cutscenes(){
     sprite_change('cats', i);
     $('#cont').click(()=>{
         $('#cont').css('visibility', 'hidden');
-        if(typeof(cats[i])!='number'){
+        if(typeof(cats[i]).slice(0,1)!=0){
             print(cats[++i],()=>{
                 $('#cont').css({visibility: 'visible'});
             });
@@ -130,7 +130,7 @@ function cutscenes(){
             $('.dansw').fadeIn(100);
             $('#idkwtf').animate({opacity: '0'}, 700);
             $('#idkwtf').css({background: 'radial-gradient( #00000000, 65%, #ffafbc71)'})
-            dialog(cats[i]);
+            dialog(cats[i].slice(1));
         }
     });
 }
