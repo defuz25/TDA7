@@ -42,7 +42,7 @@ $('#tutor').click(()=> {
 })
 
 function sprite_change(name,ns){
-    $('#men').fadeOut(250, 'linear', ()=>$(`#${name}`).attr('src', `sprites/${name}.png`));
+    $('#men').fadeOut(250, 'linear', ()=>$(`#${name}`).attr('src', `sprites/${name}${ns}.png`));
     $('#men').fadeIn(250, 'linear');
 }
 function luck_change(correct){
