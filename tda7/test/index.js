@@ -138,7 +138,6 @@ function cutscenes(){
             }
         });
     }
-    print_txt()
 }
 
 $('.dansw').click(function() {
