@@ -120,10 +120,10 @@ function cutscenes(){
     $('#cont').click(()=>{
         $('#cont').css('visibility', 'hidden');
         if(cats[i+1]!=0){
+            sprite_change('cats', i+1);
             print(cats[++i],()=>{
                 $('#cont').css({visibility: 'visible'});
             });
-            sprite_change('cats', i);
         } else {
             $('#dwind').animate({top: '620%'},1000,'swing',()=>$('#dwind').css({visibility: 'visible'}));
             $('#sf_border').animate({left: '10px'},1000);
