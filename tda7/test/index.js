@@ -103,7 +103,7 @@ function cutscenes(){
     // $('#dwind').fadeOut(500);
     $('#idkwtf').css({background: 'radial-gradient( #00000000, 65%, #00000071)'})
     $('#idkwtf').fadeIn(400);
-    $('#dwind').animate({top: '80%'},1000);
+    $('#dwind').animate({top: '70%'},1000);
 }
 
 $('.dansw').click(function() {

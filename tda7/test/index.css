@@ -3,6 +3,7 @@ body{
     background-image: url(bg.png);
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
 #loader{
     position: fixed;
