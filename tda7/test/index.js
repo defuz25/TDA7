@@ -124,7 +124,7 @@ function cutscenes(){
         $('#cont').fadeOut(100);
         if(typeof txt!='number'){
             print(cats[++i],()=>{
-                $('#cont').fadeIn(100);
+                $('#cont').css({visibility: 'visible'});
                 $('#dwind').css('pointer_events', 'auto');
             });
         } else {
