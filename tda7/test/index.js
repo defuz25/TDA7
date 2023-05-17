@@ -9,6 +9,7 @@ let luck = 30;
 let is1 = false;
 let isCat = false;
 // $('#tutor').hide();
+$('#cats').hide();
 $('#cont').css('visibility', 'hidden');
 $('.dansw:eq(0)').css('top', '78.5%');
 $('.dansw:eq(1)').css('top', '88%');
