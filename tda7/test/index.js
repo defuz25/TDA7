@@ -138,6 +138,7 @@ function cutscenes(){
                 $('#cont').css({visibility: 'visible'});
             });
         } else {
+            $('#bg').fadeIn(500);
             $('#cats').fadeOut(250);
             $('#cont').fadeOut(250);
             $('#dwind').animate({top: '120%'},1000,'swing',()=>$('#dwind').css({visibility: 'visible'}));
