@@ -22,7 +22,7 @@ function preloadImage(url){
     var img=new Image();
     img.src=url;
 }
-for(let i=0;i<=3:i++){
+for(let i=0;i<=3;i++){
     preloadImage(`sprites/cats${i}.png`);
 }
 window.onload = function () {
