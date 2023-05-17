@@ -42,7 +42,7 @@ $('#tutor').click(()=> {
 })
 
 function sprite_change(name,ns){
-    $('#men').fadeOut(250, 'linear', ()=>$(`#${name}`).attr('src', `sprites/${name+ns}.png`));
+    $('#men').fadeOut(250, 'linear', ()=>$(`#${name}`).attr('src', `sprites/${name}.png`));
     $('#men').fadeIn(250, 'linear');
 }
 function luck_change(correct){
@@ -119,7 +119,7 @@ function cutscenes(){
     sprite_change('cats', i);
     $('#cont').click(()=>{
         $('#cont').css('visibility', 'hidden');
-        if(typeof(cats[i]).slice(0,1)!=0){
+        if(cats[i].slice(0,1)!=0){
             print(cats[++i],()=>{
                 $('#cont').css({visibility: 'visible'});
             });
