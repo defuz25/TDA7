@@ -39,14 +39,14 @@ function hide_cards(a){
 }
 
 function motion_card(card_col, card_pos, to_col){
-    if(card_col==0){
-        let taken_card = solitaire_back['reserve'].slice(countR, 1); //карта из запаса
-        to_col
-    } else{
+    // if(card_col==0){
+    //     let taken_card = solitaire_back['reserve'].slice(countR, 1); //карта из запаса
+        // to_col
+    // } else{
         let numTakenCards = solitaire_back[`column${card_col}`].length-card_pos+1; //число взятых карт
         let taken_card = solitaire_back[`column${card_col}`].slice(card_pos-1); //взятые карты
         let taken_cardFirst = String(solitaire_back[`column${card_col}`].slice(card_pos-1)[0]); //первая карта из взятых
-    }
+    // }
     let idk = solitaire_back[`column${to_col}`]; //что это
     let idk_card = String(idk.slice(-1,String(idk).length-1)); //карта покрываемая
     if(taken_card!==undefined && taken_card!==null && taken_card!='' && String(solitaire_front[`column${card_col}`].slice(card_pos-1,card_pos))!='[-]'){ 
