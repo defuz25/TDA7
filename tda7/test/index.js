@@ -101,17 +101,20 @@ function cutscenes(){
     $('.dansw').fadeOut(100);
     $('#dwind').animate({top: '80%'},1000);
     $('#dwind').fadeOut(500);
+    $('d:first').show();
 }
 
 $('.dansw').click(function() {
     var_answer = Number($(this).attr('var_answer'));
     if(var_answer=='c') cutscenes();
-    else step = var_answer;
-    correct = $(this).attr('correct');
-    console.log(correct);
-    console.log(step);
-    if(correct!=2){
-        luck_change(correct);
+    else {
+        step = var_answer;
+        correct = $(this).attr('correct');
+        console.log(correct);
+        console.log(step);
+        if(correct!=2){
+            luck_change(correct);
+        }
+        print_txt(step);
     }
-    print_txt(step);
 });

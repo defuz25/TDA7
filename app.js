@@ -16,5 +16,8 @@ app.get("/igra228", function(req, res) {
 app.get('/info', function(req, res){
   res.sendFile(__dirname + '/tda7/info.html');
 });
+app.get('/test', function(req, res){
+  res.sendFile(__dirname + '/tda7/test/test.html');
+});
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
