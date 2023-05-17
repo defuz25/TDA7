@@ -23,7 +23,7 @@ function preloadImage(url){
     img.src=url;
 }
 for(let i=0;i<=3;i++){
-    preloadImage(`sprites/cats${i}.png`);
+    preloadImage(`sprites/cats${i}.jpg`);
 }
 window.onload = function () {
     setTimeout(function () {
@@ -52,7 +52,7 @@ $('#tutor').click(()=> {
 
 function sprite_change(name,ns){
     $(`#${name}`).fadeOut(500, 'linear', ()=>{
-        $(`#${name}`).attr('src', `sprites/${name+ns}.png`);
+        $(`#${name}`).attr('src', `sprites/${name+ns}.jpg`);
         $(`#${name}`).fadeIn(500);
     });
 }
