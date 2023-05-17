@@ -117,15 +117,12 @@ function cutscenes(){
     $('#dwind').animate({top: '75%'},1000);
     print(cats[i],()=>{
         $('#cont').fadeIn(100);
-        $('#dwind').css('pointer_events', 'auto');
     });
     $('#dwind').click(()=>{
-        $('#dwind').css('pointer_events', 'none');
         $('#cont').fadeOut(100);
         if(typeof txt!='number'){
             print(cats[++i],()=>{
                 $('#cont').css({visibility: 'visible'});
-                $('#dwind').css('pointer_events', 'auto');
             });
         } else {
             print_txt(txt);
