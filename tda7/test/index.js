@@ -113,7 +113,6 @@ function cutscenes(){
     $('#idkwtf').css({background: 'radial-gradient( #00000000, 65%, #00000071)'})
     $('#idkwtf').animate({opacity: '1'}, 700);
     $('#dwind').animate({top: '75%'},1000);
-    while(isCat){
         $('#dwind').click(()=>{
             $('#cont').fadeOut(100);
             let txt = cats[i++];
@@ -133,7 +132,6 @@ function cutscenes(){
                     }
                 }, 30);
             } else {
-                isCat = false;
                 print_txt(txt);
             }
         });
