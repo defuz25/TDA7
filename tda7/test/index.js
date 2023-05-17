@@ -112,7 +112,7 @@ function cutscenes(){
     $('#sf_border').animate({left: '-150px'},1000);
     $('.dansw').fadeOut(100);
     // $('#dwind').fadeOut(500);
-    $('#idkwtf').css({background: 'radial-gradient( #00000000, 65%, #00000071)'})
+    $('#idkwtf').css({background: 'radial-gradient( #00000000, 65%, black)'})
     $('#idkwtf').animate({opacity: '1'}, 700);
     $('#dwind').animate({top: '75%'},1000);
     print(cats[i],()=>{
