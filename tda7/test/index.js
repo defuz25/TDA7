@@ -18,6 +18,13 @@ $('.dansw:eq(3)').css({'top': '88%', 'margin-left': '50.5%'});
 $('.dansw:gt(0)').hide();
 // $('#tutor').slideDown(500);
 
+function preloadImage(url){
+    var img=new Image();
+    img.src=url;
+}
+for(let i=0;i<=3:i++){
+    preloadImage(`sprites/cats${i}.png`);
+}
 window.onload = function () {
     setTimeout(function () {
       $('#loader').fadeOut(1000);
