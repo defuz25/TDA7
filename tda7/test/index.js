@@ -78,7 +78,21 @@ function answers_change(step) {
     }
     }, 100);
 }
-function print_txt(step){
+function print(txt,fn){
+    $('d:first').text('');
+    let p=0;
+    let print = setInterval(() => {
+        $('d:first').text($('d:first').text() + txt[p]);
+        let txtsound = new Audio('sound/txt_sound.mp3'); 
+        txtsound.play();
+        p++
+        if(p==txt.length) {
+            clearInterval(print);
+            fn();
+        }
+    }, 30);
+}
+function dialog(step){
     let txt = repls[step];
     if(txt.slice(0,1)==1){
         let arrayRepl = txt.split('/');
@@ -90,51 +104,33 @@ function print_txt(step){
         else $('d:first').css('font-style','normal');
     } else is1 = false;
     $('.dansw').fadeOut(100);
-    $('d:first').text('');
-    let p=0;
-    let print = setInterval(() => {
-        $('d:first').text($('d:first').text() + txt[p]);
-        let txtsound = new Audio('sound/txt_sound.mp3'); 
-        txtsound.play();
-        p++
-        if(p==txt.length) {
-            clearInterval(print);
-            answers_change(step);
-        }
-    }, 30);
+    print(txt,()=>{answers_change(step)});
 }
 function cutscenes(){
     let i = 0;
-    isCat = true;
     $('#dwind').animate({top: '150%'},1000,'swing',()=>$('#dwind').css({visibility: 'hidden'}));
-    $('#sf_border').animate({right: '150%'},1000);
+    $('#sf_border').animate({left: '-150px'},1000);
     $('.dansw').fadeOut(100);
     // $('#dwind').fadeOut(500);
     $('#idkwtf').css({background: 'radial-gradient( #00000000, 65%, #00000071)'})
     $('#idkwtf').animate({opacity: '1'}, 700);
     $('#dwind').animate({top: '75%'},1000);
-        $('#dwind').click(()=>{
-            $('#cont').fadeOut(100);
-            let txt = cats[i++];
-            if(typeof txt!='number'){
-                $('#dwind').css('pointer_events', 'none');
-                let p=0;
-                let print = setInterval(() => {
-                    $('d:first').text($('d:first').text() + txt[p]);
-                    // let txtsound = new Audio('sound/txt_sound.mp3'); 
-                    // txtsound.play();
-                    p++
-                    if(p==txt.length) {
-                        clearInterval(print);
-                        answers_change(step);
-                        $('#cont').fadeIn(100);
-                        $('#dwind').css('pointer_events', 'auto');
-                    }
-                }, 30);
-            } else {
-                print_txt(txt);
-            }
-        });
+    print(cats[i],()=>{
+        $('#cont').fadeIn(100);
+        $('#dwind').css('pointer_events', 'auto');
+    });
+    $('#dwind').click(()=>{
+        $('#dwind').css('pointer_events', 'none');
+        $('#cont').fadeOut(100);
+        if(typeof txt!='number'){
+            print(cats[++i],()=>{
+                $('#cont').fadeIn(100);
+                $('#dwind').css('pointer_events', 'auto');
+            });
+        } else {
+            print_txt(txt);
+        }
+    });
 }
 
 $('.dansw').click(function() {
@@ -148,6 +144,6 @@ $('.dansw').click(function() {
         if(correct!=2){
             luck_change(correct);
         }
-        print_txt(step);
+        dialog(step);
     }
 });
