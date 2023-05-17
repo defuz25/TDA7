@@ -5,6 +5,14 @@ body{
     background-size: cover;
     overflow: hidden;
 }
+#cats{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+}
 #loader{
     position: fixed;
     top: 0;
@@ -118,4 +126,5 @@ d{
     font-weight: bold;
     font-size: 20px;
     font-family: monospace;
+    cursor: default;
 }

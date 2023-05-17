@@ -41,8 +41,8 @@ $('#tutor').click(()=> {
     $('#tutor').slideUp(500);
 })
 
-function sprite_change(ns){
-    $('#men').fadeOut(250, 'linear', ()=>$('#men').attr('src', `sprites/kn${ns}.png`));
+function sprite_change(name,ns){
+    $('#men').fadeOut(250, 'linear', ()=>$(`#${name}`).attr('src', `sprites/${name+ns}.png`));
     $('#men').fadeIn(250, 'linear');
 }
 function luck_change(correct){
@@ -116,15 +116,21 @@ function cutscenes(){
     $('#idkwtf').animate({opacity: '1'}, 700);
     $('d:first').text('');
     $('#dwind').animate({top: '75%'},1000,'swing',()=>print(cats[i],()=>$('#cont').css({visibility: 'visible'})));
+    sprite_change('cats', i);
     $('#cont').click(()=>{
         $('#cont').css('visibility', 'hidden');
         if(typeof txt!='number'){
             print(cats[++i],()=>{
                 $('#cont').css({visibility: 'visible'});
-                console.log('bebraa');
             });
+            sprite_change('cats', i);
         } else {
-            print_txt(txt);
+            $('#dwind').animate({top: '150%'},1000,'swing',()=>$('#dwind').css({visibility: 'visible'}));
+            $('#sf_border').animate({left: '10px'},1000);
+            $('.dansw').fadeIn(100);
+            $('#idkwtf').animate({opacity: '0'}, 700);
+            $('#idkwtf').css({background: 'radial-gradient( #00000000, 65%, #ffafbc71)'})
+            dialog(cats[i]);
         }
     });
 }
