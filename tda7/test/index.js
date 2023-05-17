@@ -78,59 +78,67 @@ function answers_change(step) {
     }
     }, 100);
 }
-function print_txt(step, meow){
-    $('#dwind').css('pointer_events', 'none');
-    if(meow){
-        let txt = cats[step];
-    } else {
-        let txt = repls[step];
-        if(txt.slice(0,1)==1){
-            let arrayRepl = txt.split('/');
-            txt = arrayRepl[1];
-            is1 = true;
-            $(`.dansw:eq(2)`).attr('var_answer', arrayRepl[2]);
-            $(`d:eq(3)`).text('>');
-            if(arrayRepl[3]!=0) $('d:first').css('font-style','italic');
-            else $('d:first').css('font-style','normal');
-        } else is1 = false;
-        $('.dansw').fadeOut(100);
-        $('d:first').text('');
-    }
-    if(typeof txt!='number'){
-        let p=0;
-        let print = setInterval(() => {
-            $('d:first').text($('d:first').text() + txt[p]);
-            let txtsound = new Audio('sound/txt_sound.mp3'); 
-            txtsound.play();
-            p++
-            if(p==txt.length) {
-                clearInterval(print);
-                answers_change(step);
-                if(is1||meow) {
-                    $('#cont').fadeIn(100);
-                    $('#dwind').css('pointer_events', 'auto');
-                }
-            }
-        }, 30);
-    } else isCat = false;
+function print_txt(step){
+    let txt = repls[step];
+    if(txt.slice(0,1)==1){
+        let arrayRepl = txt.split('/');
+        txt = arrayRepl[1];
+        is1 = true;
+        $(`.dansw:eq(2)`).attr('var_answer', arrayRepl[2]);
+        $(`d:eq(3)`).text('>');
+        if(arrayRepl[3]!=0) $('d:first').css('font-style','italic');
+        else $('d:first').css('font-style','normal');
+    } else is1 = false;
+    $('.dansw').fadeOut(100);
+    $('d:first').text('');
+    let p=0;
+    let print = setInterval(() => {
+        $('d:first').text($('d:first').text() + txt[p]);
+        let txtsound = new Audio('sound/txt_sound.mp3'); 
+        txtsound.play();
+        p++
+        if(p==txt.length) {
+            clearInterval(print);
+            answers_change(step);
+        }
+    }, 30);
 }
 function cutscenes(){
     let i = 0;
     isCat = true;
     $('#dwind').animate({top: '150%'},1000,'swing',()=>$('#dwind').css({visibility: 'hidden'}));
-    async function() {$('#sf_border').animate({right: '150%'},1000)};
+    $('#sf_border').animate({right: '150%'},1000);
     $('.dansw').fadeOut(100);
     // $('#dwind').fadeOut(500);
     $('#idkwtf').css({background: 'radial-gradient( #00000000, 65%, #00000071)'})
     $('#idkwtf').animate({opacity: '1'}, 700);
     $('#dwind').animate({top: '75%'},1000);
-    print_txt(i,1);
     while(isCat){
         $('#dwind').click(()=>{
-            print_txt(++i,1);
             $('#cont').fadeOut(100);
+            let txt = cats[i++];
+            if(typeof txt!='number'){
+                $('#dwind').css('pointer_events', 'none');
+                let p=0;
+                let print = setInterval(() => {
+                    $('d:first').text($('d:first').text() + txt[p]);
+                    let txtsound = new Audio('sound/txt_sound.mp3'); 
+                    txtsound.play();
+                    p++
+                    if(p==txt.length) {
+                        clearInterval(print);
+                        answers_change(step);
+                        $('#cont').fadeIn(100);
+                        $('#dwind').css('pointer_events', 'auto');
+                    }
+                }, 30);
+            } else {
+                isCat = false;
+                print_txt(txt);
+            }
         });
     }
+    print_txt()
 }
 
 $('.dansw').click(function() {
