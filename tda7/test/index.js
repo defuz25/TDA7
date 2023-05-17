@@ -9,7 +9,7 @@ let luck = 30;
 let is1 = false;
 let isCat = false;
 // $('#tutor').hide();
-$('#cont').fadeOut(0);
+$('#cont').css('visibility', 'hidden');
 $('.dansw:eq(0)').css('top', '78.5%');
 $('.dansw:eq(1)').css('top', '88%');
 $('.dansw:eq(2)').css({'top': '78.5%', 'margin-left': '50.5%'});
@@ -115,7 +115,6 @@ function cutscenes(){
     $('#idkwtf').css({background: 'radial-gradient( #00000000, 65%, black)'})
     $('#idkwtf').animate({opacity: '1'}, 700);
     $('d:first').text('');
-    $('#cont').css({visibility: 'visible'});
     $('#dwind').animate({top: '75%'},1000,'swing',()=>print(cats[i],()=>$('#cont').css({visibility: 'visible'})));
     $('#cont').click(()=>{
         $('#cont').css('visibility', 'hidden');
