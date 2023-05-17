@@ -99,9 +99,9 @@ function print_txt(step){
 }
 function cutscenes(){
     $('.dansw').fadeOut(100);
-    $('#dwind').animate({top: '80%'},1000);
-    $('#dwind').fadeOut(500);
-    $('d:first').show();
+    $('#dwind').animate({top: '80%', opacity:'0'},1000);
+    // $('#dwind').fadeOut(500);
+    // $('d:first').show();
 }
 
 $('.dansw').click(function() {
