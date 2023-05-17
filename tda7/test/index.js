@@ -99,12 +99,11 @@ function print_txt(step){
 }
 function cutscenes(){
     $('.dansw').fadeOut(100);
-    $('#dwind').animate({top: '150%'},1000);
-    $('#dwind').css({visibility: 'hidden'});
-    $('#dwind').animate({top: '80%'},1000);
+    $('#dwind').animate({top: '150%'},1000,'swing',()=>$('#dwind').css({visibility: 'hidden'}));
     // $('#dwind').fadeOut(500);
     $('#idkwtf').css({background: 'radial-gradient( #00000000, 65%, #00000071)'})
     $('#idkwtf').fadeIn(400);
+    $('#dwind').animate({top: '80%'},1000);
 }
 
 $('.dansw').click(function() {
