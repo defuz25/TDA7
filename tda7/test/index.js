@@ -119,7 +119,7 @@ function cutscenes(){
     sprite_change('cats', i);
     $('#cont').click(()=>{
         $('#cont').css('visibility', 'hidden');
-        if(typeof txt!='number'){
+        if(typeof(cats[i])!='number'){
             print(cats[++i],()=>{
                 $('#cont').css({visibility: 'visible'});
             });
