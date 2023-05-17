@@ -51,9 +51,9 @@ $('#tutor').click(()=> {
 })
 
 function sprite_change(name,ns,t){
-    $(`#${name}`).fadeOut(250, 'linear', ()=>{
+    $(`#${name}`).fadeOut(400, 'linear', ()=>{
         $(`#${name}`).attr('src', `sprites/${name+ns}.jpg`);
-        setTimeout(()=>$(`#${name}`).fadeIn(250),t)
+        setTimeout(()=>$(`#${name}`).fadeIn(400),t)
     });
 }
 function luck_change(correct){
