@@ -29,6 +29,7 @@ window.onload = function () {
     setTimeout(function () {
       $('#loader').fadeOut(1000);
     }, 500);
+    
   }
 
 async function f(){
@@ -117,6 +118,7 @@ function dialog(step){
     print(txt,()=>{answers_change(step)});
 }
 function cutscenes(){
+    $('#bg').fadeOut(500);
     let i = 0;
     $('#dwind').animate({top: '150%'},1000,'swing',()=>$('#dwind').css({visibility: 'hidden'}));
     $('#sf_border').animate({left: '-150px'},1000);
@@ -142,6 +144,7 @@ function cutscenes(){
             $('#sf_border').animate({left: '10px'},1000);
             $('#idkwtf').animate({opacity: '0'}, 700,'swing',()=>$('#idkwtf').css({background: 'radial-gradient( #00000000, 65%, #ffafbc71)'}));
             dialog(cats[i].slice(1));
+            i = 0;
         }
     });
 }

@@ -1,9 +1,17 @@
 body{
     background-color: #000000;
+    overflow: hidden;
+}
+#bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
     background-image: url(bg.png);
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
 }
 #cats{
     position: absolute;
