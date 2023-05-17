@@ -121,8 +121,8 @@ function cutscenes(){
                 let p=0;
                 let print = setInterval(() => {
                     $('d:first').text($('d:first').text() + txt[p]);
-                    let txtsound = new Audio('sound/txt_sound.mp3'); 
-                    txtsound.play();
+                    // let txtsound = new Audio('sound/txt_sound.mp3'); 
+                    // txtsound.play();
                     p++
                     if(p==txt.length) {
                         clearInterval(print);
