@@ -114,15 +114,12 @@ function cutscenes(){
     // $('#dwind').fadeOut(500);
     $('#idkwtf').css({background: 'radial-gradient( #00000000, 65%, black)'})
     $('#idkwtf').animate({opacity: '1'}, 700);
-    $('#dwind').animate({top: '75%'},1000);
-    print(cats[i],()=>{
-        $('#cont').fadeIn(100);
-    });
+    $('#dwind').animate({top: '75%'},1000,'swing',()=>print(cats[i],()=>$('#cont').fadeIn(100)));
     $('#dwind').click(()=>{
-        $('#cont').fadeOut(100);
+        $('#cont').css('visibility', 'hidden');
         if(typeof txt!='number'){
             print(cats[++i],()=>{
-                $('#cont').css({visibility: 'visible'});
+                $('#cont').css('visibility', 'visible');
             });
         } else {
             print_txt(txt);
