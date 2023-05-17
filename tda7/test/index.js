@@ -42,9 +42,12 @@ $('#tutor').click(()=> {
     $('#tutor').slideUp(500);
 })
 
-function sprite_change(name,ns){
-    $(`#${name}`).fadeOut(250, 'linear', ()=>$(`#${name}`).attr('src', `sprites/${name+ns}.png`));
-    $(`#${name}`).fadeIn(250);
+function sprite_change(name,ns){{
+    $(`#${name}`).fadeOut(250, 'linear', ()=>{
+        $(`#${name}`).attr('src', `sprites/${name+ns}.png`);
+        $(`#${name}`).fadeIn(250);
+    });
+    
 }
 function luck_change(correct){
     luck+=correct?15:Math.ceil(-luck*0.7);
@@ -127,6 +130,7 @@ function cutscenes(){
                 $('#cont').css({visibility: 'visible'});
             });
         } else {
+            $('#cont').fadeOut(250);
             $('#dwind').animate({top: '120%'},1000,'swing',()=>$('#dwind').css({visibility: 'visible'}));
             $('#dwind').animate({top: '62%'},1000);
             $('#sf_border').animate({left: '10px'},1000);
