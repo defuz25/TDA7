@@ -1,0 +1,125 @@
+body{
+    background-color: rgb(24, 24, 36);
+}
+#bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+#wrapper{
+    font-family:  'Trebuchet MS', Calibri;
+    color: #ffffffd7;
+    font-weight: bold;
+    height: 400px;
+    width: 700px;
+    position: absolute;
+    left: calc(50% - 350px);
+    top: 10%;
+    padding: 10px;
+    /* position: absolute; */
+    background: linear-gradient(rgba(197, 73, 255, 0.5), rgba(110, 073, 255, 0.5));
+    cursor: default;
+}
+#header{
+    border: 2px #ffffffd0 solid;
+    padding: 13px;
+    font-size: 20px;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+    border-inline: 0;
+}
+#header span{
+    float: right;
+    font-size: 10px;
+    letter-spacing: normal;
+    color: #ffffff30;
+    margin-top: 20px;
+}
+#main{
+    display: flex;
+}
+#chats{
+    width: 30%;
+    height: 330px;
+    overflow-y: auto;
+    border: 2px #ffffffd0 solid;
+    border-inline: 0;
+}
+#chats::-webkit-scrollbar{
+    width: 5px;
+    background-color: #0000;
+}
+#chats::-webkit-scrollbar-thumb{
+    background-color: #ffffffd0;
+}
+#chats table{
+    width: 100%;
+    border-collapse: collapse;
+}
+#chats td{
+    height: 40px;
+    padding-inline: 10px;
+}
+#chats tr{
+    border-bottom: 2px #ffffffd0 solid;
+    border-inline: 0;
+}
+#chats tr:last-child{
+    border-bottom: 0;
+}
+#chats tr:hover{
+    background-color: rgba(110, 073, 255, 0.3);
+}
+#messages{
+    border: 2px #ffffffd0 solid;
+    width: 70%;
+    margin-left: 10px;
+    padding: 5px;
+    border-inline: 0;
+    display: block;
+    overflow-y: auto;
+}
+#messages::-webkit-scrollbar{
+    width: 5px;
+    background-color: #0000;
+}
+#messages::-webkit-scrollbar-thumb{
+    background-color: #ffffffd0;
+}
+.new-msg{
+    width: 10%;
+}
+.msg{
+    border: 2px #ffffffd0 solid;
+    border-radius: 10px 10px 10px 0;
+    padding: 5px;
+    padding-inline: 15px;
+    margin-top: 5px;
+    display: inline-block;
+}
+.ur-msg{
+    float: right;
+    border-radius: 10px 10px 0;
+}
+
+#menu{
+    /* border: 4px #ffffffd0 solid; */
+    /* border-inline: 0; */
+    height: 100%;
+    display: block;
+}
+.menu-buttons{
+    border: 4px #ffffffd0 solid;
+    border-inline: 0;
+    margin: 30px;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 5px;
+    font-variant: small-caps;
+    padding: 10px;
+}
+.menu-buttons:hover{
+    background: linear-gradient(rgb(255,255,255) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 70%, rgba(255,255,255) 100%);
+}

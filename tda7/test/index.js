@@ -11,11 +11,11 @@ let isCat = false;
 // $('#tutor').hide();
 $('#cats').hide();
 $('#cont').css('visibility', 'hidden');
-$('.dansw:eq(0)').css('top', '78.5%');
-$('.dansw:eq(1)').css('top', '88%');
-$('.dansw:eq(2)').css({'top': '78.5%', 'margin-left': '50.5%'});
-$('.dansw:eq(3)').css({'top': '88%', 'margin-left': '50.5%'});
-$('.dansw:gt(0)').hide();
+// $('.dansw:eq(0)').css('top', '79%');
+// $('.dansw:eq(1)').css('top', '89%');
+// $('.dansw:eq(2)').css({'top': '79%', 'margin-left': '50.5%'});
+// $('.dansw:eq(3)').css({'top': '89%', 'margin-left': '50.5%'});
+// $('.dansw:gt(0)').hide();
 // $('#tutor').slideDown(500);
 
 function preloadImage(url){
@@ -129,7 +129,7 @@ function cutscenes(){
     $('d:first').text('');
     $('#dwind').animate({top: '75%'},1000,'swing',()=>print(cats[i],()=>$('#cont').css({visibility: 'visible'})));
     sprite_change('cats', i, 500);
-    $('#cont').click(()=>{
+    $('body').click(()=>{
         i++;
         $('#cont').css('visibility', 'hidden');
         if(cats[i]!=0){
@@ -150,10 +150,19 @@ function cutscenes(){
         }
     });
 }
+function horror(){
+    $('d:first').text('');
+    $('#bg').fadeOut(500);
+    $('.dansw').fadeOut(500);
+    $('#sf_border').fadeOut(500);
+    $('.window').css({visibility: 'hidden'});
+    $('d:first').text('aaaaa');
+}
 
 $('.dansw').click(function() {
     var_answer = $(this).attr('var_answer');
     if(var_answer=='c') cutscenes();
+    else if(var_answer=='h') horror();
     else {
         step = var_answer;
         correct = $(this).attr('correct');

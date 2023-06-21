@@ -10,6 +10,7 @@ body{
     height: 100%;
     width: 100%;
     background-image: url(bg.png);
+    opacity: 0.75;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -29,7 +30,7 @@ body{
     height: 100%;
     width: 100%;
     z-index: 1000;
-    background: linear-gradient(#ffa2e3, #ffcef7);
+    background: linear-gradient(rgb(197, 73, 255), rgb(165, 110, 211));
     color: white;
     font-family: monospace;
     font-size: 20px;
@@ -70,45 +71,50 @@ body{
     top: 10%;
 }
 .window{
-    background-color: #f7ade0f5;
-    background-image: url(bgafonya.png);
-    border: solid #f789d4e1 4px;
-    border-radius: 8px;
+    background: linear-gradient(rgba(197, 73, 255, 0.5), rgba(165, 110, 211, 0.8)), url(bgafonya.png);
+    border-top: solid rgb(197, 73, 255) 4px;
+    border-bottom: solid rgb(165, 110, 211) 4px;
+    border-inline: 0;
+    /* border-inline: solid rgb(177, 93, 233) 4px;  */
+    /* border-radius: 8px; */
     text-align: center;
-    display: flex;
+    /* display: flex; */
 }
-#dwind{
+.window .inv{
+    
+}
+#dialogs{
     position: absolute;
     top: 62%;
-    width: 80%;
-    height: 15%;
-    margin-left: 10%;
+    /* margin-left: 10%; */
+    width: 800px;
+    left: calc(50% - 400px);
 }
-.dansw{
-    position: absolute;
-    /* top: 82%; */
-    width: 39.5%;
-    height: 8%;
-    margin-left: 10%;
+#dwind{
+    /* width: 80%; */
+    /* height: 15%; */
 }
-.dansw:hover{
-    background-color: #eb9bd1f5;
-}
-d{
+#dialogs td{
     color: white;
     font-size: 20px;
-    margin: auto;
+    /* margin: auto; */
     font-family: monospace;
     font-weight: bold;
     letter-spacing: 0.3px;
     pointer-events: none;
     visibility: visible;
+    /* width: 50%; */
+    padding: 20px;
 }
+#dialogs tr:hover{
+    background-color: rgba(129, 103, 230, 0.3);
+}
+
 #scale_fail{
     z-index: 11;
     width: 30px;
     height: 30%;
-    background-color: #ffafbc;
+    background: linear-gradient(rgb(197, 73, 255), rgb(165, 110, 211));
     border-radius: 5px;
 }
 #sf_border{
