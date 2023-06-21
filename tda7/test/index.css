@@ -81,7 +81,7 @@ body{
     /* display: flex; */
 }
 .window .inv{
-    
+
 }
 #dialogs{
     position: absolute;
@@ -91,23 +91,33 @@ body{
     left: calc(50% - 400px);
 }
 #dwind{
-    /* width: 80%; */
-    /* height: 15%; */
+    width: 80%;
+    height: 15%;
 }
-#dialogs td{
+/* #dialogs td{
     color: white;
     font-size: 20px;
-    /* margin: auto; */
+    margin: auto;
     font-family: monospace;
     font-weight: bold;
     letter-spacing: 0.3px;
     pointer-events: none;
     visibility: visible;
-    /* width: 50%; */
+    width: 50%;
     padding: 20px;
 }
 #dialogs tr:hover{
     background-color: rgba(129, 103, 230, 0.3);
+} */
+.dansw{
+    position: absolute;
+    /* top: 82%; */
+    width: 39.5%;
+    height: 8%;
+    margin-left: 10%;
+}
+.dansw:hover{
+    background-color: #eb9bd1f5;
 }
 
 #scale_fail{
