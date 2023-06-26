@@ -10,9 +10,9 @@ body{
     height: 100%;
     width: 100%;
     background-image: url(bg.png);
-    opacity: 0.75;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
 #cats{
     position: absolute;
@@ -30,7 +30,7 @@ body{
     height: 100%;
     width: 100%;
     z-index: 1000;
-    background: linear-gradient(rgb(197, 73, 255), rgb(165, 110, 211));
+    background: linear-gradient(rgba(197, 73, 255), rgba(165, 110, 211));
     color: white;
     font-family: monospace;
     font-size: 20px;
@@ -72,19 +72,18 @@ body{
 }
 .window{
     background: linear-gradient(rgba(197, 73, 255, 0.5), rgba(165, 110, 211, 0.8)), url(bgafonya.png);
-    border-top: solid rgb(197, 73, 255) 4px;
-    border-bottom: solid rgb(165, 110, 211) 4px;
-    border-inline: 0;
-    /* border-inline: solid rgb(177, 93, 233) 4px;  */
-    /* border-radius: 8px; */
+    border: solid #f789d4e1 4px;
+    border-radius: 8px;
     text-align: center;
-    /* display: flex; */
+    display: flex;
 }
 #dwind{
+    position: absolute;
+    top: 62%;
     width: 80%;
     height: 15%;
+    margin-left: 10%;
 }
-
 .dansw{
     position: absolute;
     /* top: 82%; */
@@ -95,12 +94,21 @@ body{
 .dansw:hover{
     background-color: #eb9bd1f5;
 }
-
+d{
+    color: white;
+    font-size: 20px;
+    margin: auto;
+    font-family: monospace;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+    pointer-events: none;
+    visibility: visible;
+}
 #scale_fail{
     z-index: 11;
     width: 30px;
     height: 30%;
-    background: linear-gradient(rgb(197, 73, 255), rgb(165, 110, 211));
+    background-color: #ffafbc;
     border-radius: 5px;
 }
 #sf_border{
