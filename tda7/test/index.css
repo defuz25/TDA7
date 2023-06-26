@@ -93,7 +93,7 @@ body{
     margin-left: 10%;
 }
 .dansw:hover{
-    background: linear-gradient(rgb(193, 60, 211), rgb(182, 110, 211));
+    background: linear-gradient(rgba(189, 76, 241, 0.5), rgba(153, 101, 196, 0.8));
 }
 d{
     color: white;
