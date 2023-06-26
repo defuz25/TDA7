@@ -72,7 +72,8 @@ body{
 }
 .window{
     background: linear-gradient(rgba(197, 73, 255, 0.5), rgba(165, 110, 211, 0.8)), url(bgafonya.png);
-    border: solid #f789d4e1 4px;
+    border-top: solid rgba(197, 73, 255) 4px;
+    border-bottom: solid rgba(165, 110, 211) 4px;
     border-radius: 8px;
     text-align: center;
     display: flex;
@@ -120,7 +121,7 @@ d{
     width: 30px;
     height: 300px;
     border: #ffffff 2px solid;
-    background-color: #0000004f;
+    background: linear-gradient(rgb(234, 73, 255), rgb(182, 110, 211));
     padding: 2px;
     display: flex;
 	flex-direction: column-reverse;
