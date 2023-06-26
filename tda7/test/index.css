@@ -93,7 +93,7 @@ body{
     margin-left: 10%;
 }
 .dansw:hover{
-    background: linear-gradient(rgba(189, 76, 241, 0.5), rgba(153, 101, 196, 0.8));
+    background: linear-gradient(rgba(189, 76, 241, 0.5), rgba(153, 101, 196, 0.8)), url(bgafonya.png);
 }
 d{
     color: white;
