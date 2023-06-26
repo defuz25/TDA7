@@ -93,7 +93,7 @@ body{
     margin-left: 10%;
 }
 .dansw:hover{
-    background-color: #eb9bd1f5;
+    background: linear-gradient(rgb(193, 60, 211), rgb(182, 110, 211));
 }
 d{
     color: white;
@@ -109,7 +109,7 @@ d{
     z-index: 11;
     width: 30px;
     height: 30%;
-    background-color: #ffafbc;
+    background: linear-gradient(rgb(234, 73, 255), rgb(182, 110, 211));
     border-radius: 5px;
 }
 #sf_border{
@@ -121,7 +121,7 @@ d{
     width: 30px;
     height: 300px;
     border: #ffffff 2px solid;
-    background: linear-gradient(rgb(234, 73, 255), rgb(182, 110, 211));
+    background-color: #0000004f;
     padding: 2px;
     display: flex;
 	flex-direction: column-reverse;
