@@ -83,32 +83,10 @@ body{
 .window .inv{
 
 }
-#dialogs{
-    position: absolute;
-    top: 62%;
-    /* margin-left: 10%; */
-    width: 800px;
-    left: calc(50% - 400px);
-}
 #dwind{
     width: 80%;
     height: 15%;
 }
-/* #dialogs td{
-    color: white;
-    font-size: 20px;
-    margin: auto;
-    font-family: monospace;
-    font-weight: bold;
-    letter-spacing: 0.3px;
-    pointer-events: none;
-    visibility: visible;
-    width: 50%;
-    padding: 20px;
-}
-#dialogs tr:hover{
-    background-color: rgba(129, 103, 230, 0.3);
-} */
 .dansw{
     position: absolute;
     /* top: 82%; */
