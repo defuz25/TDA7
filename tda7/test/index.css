@@ -80,13 +80,11 @@ body{
     text-align: center;
     /* display: flex; */
 }
-.window .inv{
-
-}
 #dwind{
     width: 80%;
     height: 15%;
 }
+
 .dansw{
     position: absolute;
     /* top: 82%; */

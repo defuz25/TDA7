@@ -11,11 +11,11 @@ let isCat = false;
 // $('#tutor').hide();
 $('#cats').hide();
 $('#cont').css('visibility', 'hidden');
-// $('.dansw:eq(0)').css('top', '79%');
-// $('.dansw:eq(1)').css('top', '89%');
-// $('.dansw:eq(2)').css({'top': '79%', 'margin-left': '50.5%'});
-// $('.dansw:eq(3)').css({'top': '89%', 'margin-left': '50.5%'});
-// $('.dansw:gt(0)').hide();
+$('.dansw:eq(0)').css('top', '79%');
+$('.dansw:eq(1)').css('top', '89%');
+$('.dansw:eq(2)').css({'top': '79%', 'margin-left': '50.5%'});
+$('.dansw:eq(3)').css({'top': '89%', 'margin-left': '50.5%'});
+$('.dansw:gt(0)').hide();
 // $('#tutor').slideDown(500);
 
 function preloadImage(url){
